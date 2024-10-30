@@ -4,7 +4,14 @@ const question = document.querySelector(".question");
 const gif = document.querySelector(".gif");
 
 // Change text and gif when the Yes button is clicked
-yesBtn.addEventListener("click", () => {
+yesBtn.addEventListener("click", (event) => {
+  event.preventDefault(); // Mencegah klik otomatis di perangkat sentuh
+  question.innerHTML = "I love you moree sayanggg";
+  gif.src = "gif.gif"; 
+});
+
+yesBtn.addEventListener("touchstart", (event) => {
+  event.preventDefault(); // Mencegah klik otomatis di perangkat sentuh
   question.innerHTML = "I love you moree sayanggg";
   gif.src = "gif.gif"; 
 });
